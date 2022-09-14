@@ -11,15 +11,21 @@
   "last_name",
   "username",
   "date_of_birth",
-  "city",
-  "resume",
-  "gender",
-  "hobby",
-  "column_break_5",
+  "full_name",
   "user",
+  "mobile",
+  "column_break_5",
+  "city",
   "address",
+  "gender",
   "section_break_10",
+  "hobby",
+  "check_9",
+  "singing",
+  "column_break_16",
+  "resume",
   "amended_from",
+  "section_break_19",
   "submit"
  ],
  "fields": [
@@ -34,9 +40,8 @@
    "label": "Last Name"
   },
   {
-   "fetch_from": "user.username",
    "fieldname": "date_of_birth",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Date Of Birth"
   },
   {
@@ -60,8 +65,9 @@
    "reqd": 1
   },
   {
+   "default": "0",
    "fieldname": "hobby",
-   "fieldtype": "Data",
+   "fieldtype": "Heading",
    "label": "Hobby"
   },
   {
@@ -92,6 +98,19 @@
    "fieldtype": "Section Break"
   },
   {
+   "fetch_from": "user.username",
+   "fieldname": "username",
+   "fieldtype": "Link",
+   "label": "Username",
+   "options": "User"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "options": "Phone"
+  },
+  {
    "fetch_from": "username.email",
    "fieldname": "user",
    "fieldtype": "Link",
@@ -99,21 +118,55 @@
    "options": "User"
   },
   {
-   "fetch_from": "user.username",
-   "fieldname": "username",
-   "fieldtype": "Link",
-   "label": "UserName",
-   "options": "User"
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "check_9",
+   "fieldtype": "Check",
+   "label": "Dancing"
+  },
+  {
+   "default": "0",
+   "fieldname": "singing",
+   "fieldtype": "Check",
+   "label": "Singing"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [
   {
    "link_doctype": "User",
-   "link_fieldname": "Email"
+   "link_fieldname": "Email",
+   "table_fieldname": "email"
+  },
+  {
+   "link_doctype": "User",
+   "link_fieldname": "Username",
+   "table_fieldname": "username"
+  },
+  {
+   "link_doctype": "User",
+   "link_fieldname": "first_name",
+   "table_fieldname": "first_name"
+  },
+  {
+   "link_doctype": "User",
+   "link_fieldname": "last_name",
+   "table_fieldname": "last_name"
   }
  ],
- "modified": "2022-09-13 16:59:14.180480",
+ "modified": "2022-09-14 11:47:54.788508",
  "modified_by": "Administrator",
  "module": "myapp",
  "name": "Registration",
