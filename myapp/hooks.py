@@ -1,3 +1,4 @@
+
 from . import __version__ as app_version
 
 app_name = "myapp"
@@ -94,9 +95,9 @@ app_license = "MIT"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Customer" : "myapp.override.Local"
+}
 
 # Document Events
 # ---------------
@@ -185,3 +186,6 @@ app_license = "MIT"
 # auth_hooks = [
 #	"myapp.auth.validate"
 # ]
+fixtures = [
+        "Custom Field"
+    ]
